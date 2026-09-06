@@ -60,6 +60,21 @@ git clone https://github.com/b619-y/rss-system-builder.git ~/.agents/skills/rss-
 希望跨设备同步已读状态；先核实可选方案的费用与限制。
 ```
 
+## 轻量本地英文 → 中文翻译
+
+skill 包含可选的 **TranslateGemma 4B + Ollama** 配置流程：使用 `translategemma:4b` 在本机把英文标题、摘要和已获取的正文翻成简体中文。官方仓库对应量化版本约 3.3 GB，但运行内存还受文本长度等因素影响；不代表所有设备上效果最好。[模型信息](https://ollama.com/library/translategemma:4b)
+
+流程涵盖模型检查与按需下载、公开短句测试、空闲卸载、阅读器接入、长文分段、术语核对及禁止未经同意的云端回退。它不强制使用 Ollama，也不捆绑模型；翻译摘要不等于获取论文全文。
+
+```text
+使用 $rss-system-builder，为我的 RSS 配置轻量本地英文转简体中文。
+先检查现有模型；若适合我的硬件，可采用 TranslateGemma 4B。
+我需要中文标题和摘要，正文按需翻译，保留原文方便对照。
+控制内存占用，不自动回退到云端翻译，并验证实际效果。
+```
+
+详细步骤及可运行测试命令见 [本地翻译指南](references/local-translation.md)。这里公开的是通用方案，不包含任何个人机器配置或翻译内容。
+
 ## 随“最近关注的问题”调整
 
 采用“长期兴趣 + 临时问题”两层结构：长期频道持续提供广度，临时问题影响精选顺序或专题检索。不是每次研究方向略变就删掉原来的订阅。
@@ -111,6 +126,7 @@ python3 -B -m unittest discover -s scripts -p 'test_*.py' -v
 - [SKILL.md](SKILL.md)：智能体的主工作流程与边界。
 - [references/manifest.md](references/manifest.md)：来源清单与 OPML 格式。
 - [references/adaptive-focus.md](references/adaptive-focus.md)：近期研究问题、定期更新、通知与隐私约束。
+- [references/local-translation.md](references/local-translation.md)：轻量本地英文转中文、资源控制与阅读器接入。
 - [references/mrrss.md](references/mrrss.md)：MrRSS 的实测注意事项，使用前须核对版本。
 - [scripts/build_opml.py](scripts/build_opml.py)：可独立使用的 OPML 生成器。
 - [agents/openai.yaml](agents/openai.yaml)：技能名称及默认调用提示。

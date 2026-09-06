@@ -55,6 +55,8 @@ For Chinese or other target-language reading, separate UI language, title transl
 
 Choose translation according to hardware, privacy, speed and budget. Check measured disk use, active memory and idle unloading rather than assuming a model size is optimal. Do not silently fall back from a local model to a cloud translator when local-only processing is intended. Inspect the reader's fallback behavior.
 
+For lightweight local English-to-Simplified-Chinese translation, read [references/local-translation.md](references/local-translation.md). It provides an optional TranslateGemma 4B / Ollama recipe, a public-text smoke test, memory controls and reader integration checks. Reuse an existing compatible local model where appropriate; do not download models or change running services just because this reference is loaded.
+
 Create a short domain glossary and check a few real titles, including chemical names, species, abbreviations and technical concepts. Fluent translation can still be wrong: chromate ≠ dichromate, barite ≠ gypsum, ryegrass ≠ oats, and global sensitivity ≠ geographic global scale. If quality is insufficient, correct verified cached translations or improve the prompt/model with a retest; keep the limitation explicit. Do not label machine output as reviewed scientific translation.
 
 ## Verify and hand over
