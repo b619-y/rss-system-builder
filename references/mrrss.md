@@ -32,4 +32,6 @@ Observed settings distinguish `language`, `target_language`, `translation_enable
 
 An inspected build falls back from AI translation to an online translator on AI failure or quota exhaustion. Verify/disable this path when local-only processing is required. A locally configured model alone does not prove local-only operation.
 
+Creating an AI profile does not necessarily select it for translation. Verify the translation feature's profile association and resolve its actual model/endpoint; an unselected local profile can coexist with a legacy cloud-model default. Select only the intended feature's existing profile and retest after refresh. Some inspected refresh paths replace cached translated titles; verify after an actual refresh, not just before it, and do not repeatedly trigger feed updates to refresh the UI.
+
 Fixed polling requires the process and appropriate network path to remain available. Closing to tray and quitting are different. Verify scheduler logs and persistence after restart. OS push, cross-device sync, and phone/watch forwarding are additional capabilities, not consequences of enabling polling. Do not change app auto-update preferences unless requested or a specific authorized repair requires it; disclose any such change.

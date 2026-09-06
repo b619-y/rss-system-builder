@@ -53,6 +53,8 @@ Prefer documented app APIs, imports and UI over direct database edits. Read [ref
 
 For Chinese or other target-language reading, separate UI language, title translation, abstract translation and full-text availability. RSS often contains only a title or abstract; translating that is not translating the full paper. Keep original titles, links and identifiers accessible.
 
+When the user wants abstract-first triage or separate recent updates from historical research, read [references/reading-and-freshness.md](references/reading-and-freshness.md). Keep full-text retrieval on demand, preserve historical references, and distinguish publication date from discovery time when selecting recent digests.
+
 Choose translation according to hardware, privacy, speed and budget. Check measured disk use, active memory and idle unloading rather than assuming a model size is optimal. Do not silently fall back from a local model to a cloud translator when local-only processing is intended. Inspect the reader's fallback behavior.
 
 For lightweight local English-to-Simplified-Chinese translation, read [references/local-translation.md](references/local-translation.md). It provides an optional TranslateGemma 4B / Ollama recipe, a public-text smoke test, memory controls and reader integration checks. Reuse an existing compatible local model where appropriate; do not download models or change running services just because this reference is loaded.

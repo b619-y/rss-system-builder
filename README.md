@@ -79,6 +79,27 @@ git clone https://github.com/b619-y/rss-system-builder.git ~/.agents/skills/rss-
 希望跨设备同步已读状态；先核实可选方案的费用与限制。
 ```
 
+## 日常阅读：先看摘要，重要论文再读全文
+
+推荐流程是：**中文标题和摘要初筛 → 标记值得精读的论文 → 按需获取合法全文 → 原文对照翻译与精读**。不默认批量下载所有论文，也不把 RSS 摘要说成论文全文。
+
+- 期刊 RSS 常见的是标题、摘要或简介；完整论文需看开放获取情况或已有机构权限。
+- arXiv 订阅通常展示摘要，可从原文页获取论文 PDF。
+- 新闻、博客有时会直接提供全文；具体以来源实际内容为准。
+- MrRSS 的“获取全文”是网页内容提取入口，并不保证能获取整篇论文 PDF或突破付费限制。建议关闭自动展开全文，保留手动按钮；没有摘要时如实标为简介或仅标题。
+
+### 为什么有些论文很老？
+
+课题关键词检索可能返回相关的历史文献，按日期排序也不等于限定了近期范围。建议将“近期动态”和“历史参考”分开；精选可采用最近 30 天等可调整窗口，旧论文继续留作参考，不删收藏、不改原始日期。
+
+日期应以来源的发表信息为依据，首次抓到一篇文章不代表它刚发表。部分阅读器会给无日期条目填入抓取时间，这种情况需要额外核验，不能仅看列表日期就断言是新文。
+
+### 多久更新？
+
+由阅读器的实际设置决定。例如可以每 30 分钟检查来源，但这不代表期刊每半小时都会发文章。期刊、预印本或新闻源更新 RSS 后，阅读器在下一次成功检查时获取条目；本机刷新通常需要电脑和应用保持可用、网络正常。通知时段与刷新间隔是两回事，安装本 skill 不会自动开启推送。
+
+完整配置与验收规范见 [阅读方式与时效管理](references/reading-and-freshness.md)。文档中的时间窗口和间隔是示例，不是对所有安装环境已经完成的配置声明。
+
 ## 轻量本地英文 → 中文翻译
 
 skill 包含可选的 **TranslateGemma 4B + Ollama** 配置流程：使用 `translategemma:4b` 在本机把英文标题、摘要和已获取的正文翻成简体中文。官方仓库对应量化版本约 3.3 GB，但运行内存还受文本长度等因素影响；不代表所有设备上效果最好。[模型信息](https://ollama.com/library/translategemma:4b)
@@ -146,6 +167,7 @@ python3 -B -m unittest discover -s scripts -p 'test_*.py' -v
 - [references/manifest.md](references/manifest.md)：来源清单与 OPML 格式。
 - [references/adaptive-focus.md](references/adaptive-focus.md)：近期研究问题、定期更新、通知与隐私约束。
 - [references/local-translation.md](references/local-translation.md)：轻量本地英文转中文、资源控制与阅读器接入。
+- [references/reading-and-freshness.md](references/reading-and-freshness.md)：摘要初筛、按需全文、新旧文献区分与刷新说明。
 - [references/mrrss.md](references/mrrss.md)：MrRSS 的实测注意事项，使用前须核对版本。
 - [scripts/build_opml.py](scripts/build_opml.py)：可独立使用的 OPML 生成器。
 - [agents/openai.yaml](agents/openai.yaml)：技能名称及默认调用提示。
