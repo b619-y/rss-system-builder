@@ -1,0 +1,4 @@
+interface:
+  display_name: "个人主题 RSS 体系搭建"
+  short_description: "按个人主题搭建可验证的 RSS 订阅、筛选、翻译与同步流程"
+  default_prompt: "使用 $rss-system-builder，根据我的关注主题、设备和语言偏好，搭建并验证个人 RSS 体系，输出可导入的订阅源及筛选配置。"
