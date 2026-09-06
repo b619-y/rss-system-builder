@@ -6,9 +6,13 @@ A reusable agent skill for personalized RSS discovery, verified subscriptions, r
 
 它是一套供 Codex 等支持 `SKILL.md` 的智能体读取的工作说明，附带 OPML 生成工具；**不是独立 RSS 阅读器，也不是安装后就会自行运行的推送服务**。你可以换成自己的学科、项目、兴趣、语言和设备，不必照搬示例。
 
-## 通用使用示例
+## 实际阅读效果
 
-以下示例仅演示功能，不代表维护者的真实研究方向、设备或订阅记录。本仓库不展示个人阅读器截图、收藏状态或实际研究笔记。
+![Mac 上 MrRSS 的实际阅读界面：分类订阅、文章列表及中文翻译](docs/images/mrrss-demo.png)
+
+图：经使用者明确授权公开的真实 MrRSS 阅读截图，展示分类订阅、阅读列表和中文机器翻译。截图中的订阅类别、文章与收藏标记属于该实例，不是其他用户的默认配置；包含历史文献，不代表全部是最新论文。MrRSS 是独立第三方阅读器，并非本项目开发的界面。
+
+下文文字示例使用通用占位符或虚构主题，不披露额外的个人研究笔记、账号或机器配置。
 
 提供兴趣与需求 → 验证来源并分类 → 导入阅读器 → 按需配置翻译、同步与精选通知。
 
@@ -27,6 +31,21 @@ A reusable agent skill for personalized RSS discovery, verified subscriptions, r
 | 已有系统调优 | 检查刷新失败、误匹配和翻译问题，尽量保留已读与收藏 | 不默认更换阅读器、修改全局网络或清空订阅 |
 
 仓库内实际可执行的辅助工具只有 `scripts/build_opml.py` 及其测试。搜索、阅读器配置、翻译与通知接入由使用此 skill 的智能体结合用户环境实施；仓库没有预装模型、账号、同步后端或 Bark 推送程序。
+
+## Mac 阅读器推荐：MrRSS
+
+如果你主要在 **Mac 上阅读 RSS，希望中文界面并结合文章翻译**，本项目推荐将 **MrRSS** 作为优先考虑的桌面阅读器。它是免费开源项目，提供 macOS 安装包，支持文章标题与内容翻译，以及筛选、脚本等扩展功能；本页截图展示的就是它的实际使用效果。[官方项目与中文说明](https://github.com/DevXDojo/MrRSS/blob/main/README_zh.md)
+
+推荐的搭配是：**本 skill 负责按兴趣组织和验证订阅，MrRSS 负责阅读与管理，轻量本地模型负责按需翻译**。这是适合中文桌面阅读的一种方案，不要求已有满意阅读器的用户迁移。
+
+上手步骤：
+
+1. 从 [MrRSS 官方 Releases](https://github.com/DevXDojo/MrRSS/releases/latest) 获取适合 Mac 的安装包；官方文档列出的标准包名为 `MrRSS-{version}-darwin-universal.dmg`，以实际发布附件为准。
+2. 安装打开后，在设置中选择简体中文，并导入本 skill 生成的 OPML；已有订阅先备份，不清空收藏和已读状态。
+3. 如需本地英文转中文，按 [本地翻译指南](references/local-translation.md) 配置模型，并核对当前 MrRSS 版本的提供商与接口选项。
+4. 先刷新少量来源，检查标题、摘要和正文各自的显示结果，再按自己的需求设置刷新间隔。
+
+注意：阅读器免费不代表所选云端 AI 服务免费；本地模型仍消耗磁盘和内存。同步与 Bark / Apple Watch 通知需要分别配置验证，不能仅靠安装 MrRSS 自动获得。不同版本的翻译、全文提取和后台行为可能变化，实施时参阅 [MrRSS 注意事项](references/mrrss.md)。
 
 ## 安装与使用
 
@@ -131,4 +150,4 @@ python3 -B -m unittest discover -s scripts -p 'test_*.py' -v
 - [scripts/build_opml.py](scripts/build_opml.py)：可独立使用的 OPML 生成器。
 - [agents/openai.yaml](agents/openai.yaml)：技能名称及默认调用提示。
 
-本项目与 MrRSS、OpenAI、Bark 无隶属关系。第三方名称归各自权利人所有。请勿将真实阅读截图、个人数据库、账号配置、通知密钥或未发表研究资料提交到本仓库。GitHub 仓库所有者用户名及公开提交信息仍按平台规则可见；公开仓库并不等于匿名发布。
+本项目与 MrRSS、OpenAI、Bark 及截图中的期刊无隶属关系。第三方名称、界面和文章内容归各自权利人所有，截图仅用于说明阅读效果。分享真实阅读截图前须取得授权并检查可见信息；不得提交个人数据库、账号配置、通知密钥或未发表研究资料。GitHub 仓库所有者用户名及公开提交信息仍按平台规则可见；公开仓库并不等于匿名发布。
