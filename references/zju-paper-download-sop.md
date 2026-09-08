@@ -92,6 +92,18 @@ failed_after_retry
 
 下载完成不等于文件可信。至少检查：文件存在、大小合理、PDF 前几字节为 `%PDF`、页数大于零、提取文本包含标题/摘要/DOI 或补充材料标题。验证失败时保留文件并标记，不把 HTML 登录页改名为 PDF。
 
+下载器必须在校验通过后写出 `download-manifest.json`，至少记录 `status=verified`、绝对 `path`、字节数、SHA-256、UTC 校验时间和实际尝试过的来源 URL。RSS 回写是独立的最后一步：使用下载 skill 的 `scripts/sync_rss_pdf.py` 按精确 `guid`/DOI 定位条目；脚本先重新校验 PDF，再用临时文件原子替换 RSS。PDF 下载成功但同步失败时，应保持“PDF 已下载、RSS 待同步”，不能显示成全文流程完成。
+
+示例：
+
+```bash
+python3 scripts/sync_rss_pdf.py \
+  --rss "/绝对路径/主题.rss" \
+  --guid "doi:10.xxxx/xxxxx" \
+  --pdf "/绝对路径/论文.pdf" \
+  --source-url "https://出版社官方PDF链接"
+```
+
 manifest 至少包含：
 
 ```text
