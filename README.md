@@ -8,6 +8,7 @@
 
 - **主题订阅**：发现并验证 RSS 来源，兼顾领域前沿与具体研究问题。
 - **中文阅读**：先看中文标题和摘要，重要文章再按需获取全文。
+- **机构全文下载**：按需通过浙大图书馆/WebVPN/Summon 和已登录浏览器获取、验证 PDF 及补充材料。
 - **本地翻译**：可选 TranslateGemma 4B + Ollama，将英文翻成简体中文，支持空闲卸载与长文分段。
 - **时效筛选**：区分近期动态与历史参考，保留原文、收藏和已读记录。
 - **动态关注**：根据用户指定的笔记或当前问题调整精选方向。
@@ -47,6 +48,6 @@ git clone https://github.com/b619-y/rss-system-builder.git ~/.agents/skills/rss-
 
 ## 详细指南
 
-[Skill 工作流程](SKILL.md) · [来源与 OPML](references/manifest.md) · [动态关注与通知](references/adaptive-focus.md) · [阅读与时效](references/reading-and-freshness.md) · [MrRSS 配置](references/mrrss.md)
+[Skill 工作流程](SKILL.md) · [浙大论文下载 SOP](references/zju-paper-download-sop.md) · [来源与 OPML](references/manifest.md) · [动态关注与通知](references/adaptive-focus.md) · [阅读与时效](references/reading-and-freshness.md) · [MrRSS 配置](references/mrrss.md)
 
 本项目与 MrRSS、OpenAI、Bark 无隶属关系。请勿上传账号密钥、个人数据库或未发表研究资料。

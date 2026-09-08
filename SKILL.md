@@ -51,7 +51,9 @@ When the user wants recommendations to follow recent research questions or notes
 
 Prefer documented app APIs, imports and UI over direct database edits. Read [references/mrrss.md](references/mrrss.md) only when operating MrRSS; verify the installed version rather than assuming that reference's endpoint/schema details still apply.
 
-For Chinese or other target-language reading, separate UI language, title translation, abstract translation and full-text availability. RSS often contains only a title or abstract; translating that is not translating the full paper. Keep original titles, links and identifiers accessible.
+When an RSS paper is selected for full-text retrieval through Zhejiang University access, read [references/zju-paper-download-sop.md](references/zju-paper-download-sop.md) and follow its route decision, browser/CDP fallback, authentication handoff, supplementary-information handling, manifest states, and PDF verification rules. RSS refresh is discovery only: do not claim that a paper is downloaded or fully translated until the file has been obtained and verified. Keep the original RSS URL, DOI, publication date, and download status separately.
+
+For Chinese or other target-language reading, separate UI language, title translation, abstract translation and full-text availability. RSS often contains only a title or abstract; translating that is not translating the full paper. Keep original titles, links and identifiers accessible. Full-text acquisition remains on-demand and must use a lawful OA, publisher, or user-authorized institutional-browser route.
 
 When the user wants abstract-first triage or separate recent updates from historical research, read [references/reading-and-freshness.md](references/reading-and-freshness.md). Keep full-text retrieval on demand, preserve historical references, and distinguish publication date from discovery time when selecting recent digests.
 
