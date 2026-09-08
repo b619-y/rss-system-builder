@@ -35,7 +35,7 @@ DOI 属于 Elsevier 且已配置官方 TDM 权限？ ── 是 → 走 Elsevier
 
 从结果中优先提取非空的 `PDF`、`在线全文`、`Full Text` 或 `View PDF` 链接。打开后，在同一已认证页面上下文执行 `fetch(url, {credentials: "include"})`，读取响应字节并分块写入目标文件；默认检查响应以 `%PDF` 开头。不要读取或导出 cookie、密码、localStorage、session token 或浏览器配置文件。
 
-推荐使用配套脚本（若用户已安装 `zju-literature-downloader`）：
+推荐使用你自己的 [`zju-edge-paper-download`](https://github.com/b619-y/zju-edge-paper-download) skill 中的配套脚本（若已安装）：
 
 ```bash
 node scripts/cdp_open_url.mjs --url '<完整 Summon 或出版社 URL>' --wait
@@ -99,4 +99,3 @@ id title doi year venue status pdf_path si_status si_paths source_url downloaded
 ```
 
 RSS 流程应保持原始 RSS 标题、链接、DOI 和发表日期；全文下载、PDF 校验、SI 状态和本地路径写入独立的 manifest 或条目关联字段。只有验证通过后，才进入 MinerU/PDF 文本提取/全文翻译；RSS 中只有标题或摘要时，只能标为摘要阅读，不能显示“全文已获取”或“全文已翻译”。
-
